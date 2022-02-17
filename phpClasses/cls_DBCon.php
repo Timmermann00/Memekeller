@@ -8,7 +8,7 @@ class cls_DBCon
     {
         $servername = "localhost";
         $username = "Memelord";
-        $password = "Meme1234";
+        $password = "Memes1234";
         $db = "Memekeller";
 
         if (self::$dbconn == null) {
