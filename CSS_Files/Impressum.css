@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16.02.2022, 20:38:24
+    Author     : jonas
+*/
+
+body{
+    background: linear-gradient(180deg, #DAE0E6, #707375);
+}
+
+.Informationlayout{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3px;
+    padding: 10px;
+    justify-content: center;
+    grid-template-areas:    
+    "Impressum"
+    "footer";
+}
+
+.Informationlayout .Impressumsfeld{
+   grid-area: Impressum;
+    background: transparent;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.Informationlayout .Impressumsfooter{
+    grid-area: footer;
+    align-items: center;
+    margin: auto;
+    background: transparent;
+    overflow: auto;
+}
+

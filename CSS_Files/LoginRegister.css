@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background: linear-gradient(120deg, #DAE0E6, #707375);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: rgb(250, 244, 244);
+    border-radius: 15px;
+}
+
+.center h1 {
+    color: black;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .textfeld {
+    position: relative;
+    border-bottom: 2px solid silver;
+    margin: 30px 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    background-color: rgb(250, 244, 244);
+    color: var(--text-color);
+    width: 100%;
+    padding: 10px 5px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid rgb(78, 74, 74);
+    border: none;
+    outline: none;
+}
+
+.textfeld label {
+    position: absolute;
+    top: 40%;
+    left: 5px;
+    color: #999898;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.textfeld span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #558eb4;
+}
+
+.textfeld input:focus~label,
+.textfeld input:not(:placeholder-shown)~label {
+    top: -5px;
+    color: #6cbef5;
+}
+
+.textfeld input:focus~span::before,
+.textfeld input:not(:placeholder-shown)~span::before {
+    width: 100%;
+    color: #6cbef5;
+}
+
+form button {
+    background: #b435fd;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #b435fd;
+    color: rgb(224, 220, 220);
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+}
+
+form button:hover {
+    border: 3px solid;
+    transition: .3s;
+}
+
+form .weiterleitung {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+form .weiterleitung a {
+    color: #3090f0;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+
+.GoBackbuton{
+    background: #b435fd;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #b435fd;
+    color: rgb(224, 220, 220);
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+}
+
+.GoBackbuton:hover{
+    border: 3px solid;
+    transition: .3s;
+}

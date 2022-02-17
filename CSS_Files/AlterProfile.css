@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background: linear-gradient(120deg, #DAE0E6, #707375);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "prof_pic prof_inf";
+    grid-template-columns: 300px 500px;
+    grid-column-gap: 10px;
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(250, 244, 244);
+    border-radius: 15px;
+}
+
+.button_grid {
+    display: grid;
+    grid-template-areas: "";
+}
+
+.grid-container .user-information {
+    grid-area: prof_inf;
+}
+
+.grid-container .user-profile {
+    grid-area: prof_pic;
+    background-image: linear-gradient(120deg, white, black);
+    height: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user-information h1 {
+    color: black;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.user-information .textfeld {
+    position: relative;
+    border-bottom: 3px solid silver;
+    margin: 30px 0;
+}
+
+input[type=text],
+input[type=email] {
+    background-color: rgb(250, 244, 244);
+    color: black;
+    width: 100%;
+    padding: 10px 5px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid rgb(78, 74, 74);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.textfeld label {
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    color: #7a7a7a;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.textfeld input:focus~label {
+    color: #6cbef5;
+}
+
+.button_grid {
+    display: grid;
+    grid-template-areas: "save_button back_button logout_button";
+    padding: 10px 5px;
+    grid-column-gap: 5px;
+}
+
+
+.button_grid .save_button {
+    grid-area: save_button;
+    background: #b435fd;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #b435fd;
+    color: rgb(224, 220, 220);
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    width: 100px;
+}
+
+.button_grid .back_button {
+    grid-area: back_button;
+    background: #b435fd;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #b435fd;
+    color: rgb(224, 220, 220);
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    width: 100px;
+}
+
+.button_grid .logout_button {
+    grid-area: logout_button;
+    background: #b435fd;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #b435fd;
+    color: rgb(224, 220, 220);
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    width: 100px;
+}
+
+.button_grid button:hover {
+    border-color: black;
+    transition: .3s;
+}
+
+@media (max-width: 855px) {
+    body {
+        margin: auto;
+        height: 120vh;
+        overflow: auto;
+        min-height: 250px;
+        max-width: 100%;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        grid-row-gap: 10px;
+        position: absolute;
+        grid-template-areas: "prof_pic" "prof_inf";
+        padding: 10px;
+        height: auto;
+        top: 60%;
+    }
+    .grid-container .user-profile {
+        grid-area: prof_pic;
+        width: 300px;
+    }
+    .grid-container .user-information {
+        grid-area: prof_inf;
+    }
+}

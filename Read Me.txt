@@ -1,0 +1,7 @@
+Instalationguide:
+
+1. memekellerDB.sql (aufindbar unter SQL_Database/memekellerDB.sql) in MySQL-Workbench als root öffnen
+2. Gesamtes Skript ausführen
+3. Projekt in Netbeans öffnen
+4. Unter Runconfigs URL (je nach vorhanden Alias) und FrontEndHtmlPhp/Startpage.php als Ziel Index einstellen
+5. Projekt starten

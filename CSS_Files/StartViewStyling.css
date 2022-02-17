@@ -1,0 +1,336 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15.02.2022, 10:12:53
+    Author     : jonas
+*/
+body, html{
+    background:linear-gradient(180deg, #DAE0E6, #707375);  
+    
+}
+
+.outer-window {
+    display: grid; 
+    grid-template-columns: 100%;
+    background:linear-gradient(180deg, #DAE0E6, #707375);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: auto;
+    min-height: 100vh;
+    grid-template-areas: 
+    "header"
+    "middle"
+    "footer";
+}
+
+.outer-window .header{ 
+    grid-area: header;
+    display: grid;
+    background-color: transparent;
+    min-height: 83px;
+    align-items: baseline;
+    grid-template-columns: 1fr 5fr 0.25fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "Logo nav-Bar UserIcon";
+}
+
+.header .logo{
+    grid-area: Logo;
+    width: 100%;
+    min-width: 100px;
+}
+
+.header .logo>img{
+   max-height: 100px;
+   width: 100%;
+   height: 100%;
+   min-height: 100px;
+   min-width: 100px; 
+}
+.header .nav-Bar{
+    grid-area: nav-Bar;
+    align-items: baseline;
+    max-height: 120px;
+    min-width:200px;
+    min-height: 100px;
+   overflow: hidden;
+   background:linear-gradient(180deg, #b435fd, #DDA0DD);
+}
+
+.nav-Bar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.nav-Bar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header .UserIcon
+{
+    grid-area: UserIcon;
+    background:linear-gradient(180deg, #b435fd, #DDA0DD);
+    max-height: 120px;
+    min-height: 100px;
+    position: relative;
+}
+
+.header .UserIcon img{
+
+    border: 1px solid black;
+    max-height: 64px;
+    max-width: 64px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -60px;
+    right: 0;
+    margin: auto;
+}
+
+.header .UserIcon>img:hover{
+  background-color: red;
+}
+
+
+.outer-window .middle{
+    grid-area: middle;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr;
+    background-color: transparent;
+    overflow: hidden;
+    grid-template-areas:
+    "filter main-content";
+}
+.outer-window .middle>*{
+    margin: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+.outer-window .middle .filter{
+    grid-area: filter;
+    height: 62vh;
+    min-width: 180px;
+    min-height: 250px;
+    max-height: 80%;
+    display: grid;
+    grid-template-rows: 30px auto;
+    grid-template-areas: 
+    "Searchbar"
+    "List";
+}
+
+.filter .Searchdiv{
+    grid-area: Searchbar;
+    max-height: 30px;
+    min-height: 10px;
+}
+
+.Filterinput{
+    width: calc(100%-10px);
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.filter .Tablediv{
+    grid-area: List;
+    overflow: auto;
+}
+
+.Filtertable{
+    width: 100%;
+    border-spacing: 0px 2px;
+}
+
+.Filterimg{
+  object-fit: cover;
+  min-height: 50px;
+  max-height: 100px;
+  width: 150px;
+  border: 1px solid black;
+}
+
+@media (max-width: 855px){ 
+    .outer-window .middle{
+        grid-template-rows: 0.5fr 1fr; 
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        grid-template-areas: 
+        "last-seen last-seen"
+        "main-content main-content";
+    }
+    
+    .outer-window .middle .filter{
+       grid-area: last-seen;
+       height: 40vh;
+       overflow: auto;
+       min-height: 250px;
+    } 
+   
+}
+    
+.middle>*:hover{
+    box-shadow: 0px 0px 0px 1px inset #0B0C10;
+}
+.middle .main-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    min-height: 550px;
+    min-width: 300px;
+    grid-area: main-content;
+    background: white;
+    grid-template-areas:
+    "Title     Spacer    Spacer"
+    "Header1   Header2   Header3"    
+    "TimeTable TimeTable TimeTable"
+    "btn-prev spacer btn-next";
+}
+.main-content .TimeTable{
+    grid-area: TimeTable;
+    background-color:transparent;
+    overflow: auto;
+    min-height: 150px;
+    max-height: 550px;
+}
+
+.main-content .TimeTable table{
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.main-content .TimeTable tbody{
+    overflow: auto;
+}
+
+.tableimg{
+  object-fit: cover;
+  min-height: 50px;
+  max-height: 100px;
+  width: 150px;
+}
+
+.main-content .btn-prev{
+    grid-area: btn-prev;
+    background: #b435fd;
+  
+    height: 30px;
+   border: 1px solid;
+   border-radius: 10px;
+   border-color: #b435fd;
+   color: rgb(224, 220, 220);
+   font-weight: 900;
+   cursor: pointer;
+   outline: none;
+}
+.main-content .btn-next{
+    grid-area: btn-next;
+   background: #b435fd;
+  
+   height: 30px;
+   border: 1px solid;
+   border-radius: 10px;
+   border-color: #b435fd;
+   color: rgb(224, 220, 220);
+   font-weight: 900;
+   outline: none;
+}
+
+.main-content>button:hover{
+    border: 3px solid;
+    transition: .3s;
+}
+
+.outer-window .footer{
+    grid-area: footer;
+    text-align: center;
+    margin:auto;
+    background-color: transparent;
+    max-width: 1100px;
+}
+
+.main-content .TimlineTitle{
+    grid-area: Title;
+}
+
+.main-content .ImageHeader{
+    grid-area: Header1;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-color: #b435fd;
+    color: black;
+    background: #707375;
+}
+
+.main-content .HeadlineHerder{
+    grid-area: Header2;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-color: #b435fd;
+    color: black;
+    background: #707375;
+}
+
+.main-content .PostedHeder{
+    grid-area: Header3;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-color: #b435fd;
+    color: black;
+    background: #707375;
+
+}
+
+
+
